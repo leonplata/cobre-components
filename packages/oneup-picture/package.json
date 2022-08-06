@@ -1,0 +1,29 @@
+{
+  "name": "@oneup/oneup-picture",
+  "version": "1.1.1",
+  "description": "> TODO: description",
+  "author": "Leon Plata <pcg.leon@outlook.com>",
+  "homepage": "https://github.com/leonplata/oneup-ui#readme",
+  "license": "ISC",
+  "main": "lib/oneup-picture.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonplata/oneup-ui.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/leonplata/oneup-ui/issues"
+  }
+}
