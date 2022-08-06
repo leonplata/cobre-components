@@ -14,8 +14,7 @@
     "republish": "npm unpublish --force @oneup/core-website && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "watch": "tsc --watch",
-    "prepare": "npm run build"
+    "watch": "tsc --watch"
   },
   "homepage": "https://github.com/oneupsoft/core-website",
   "author": {

@@ -19,8 +19,7 @@
     "republish": "npm unpublish --force @oneup/oneup-layout && npm publish",
     "test": "npm run build && wct --config-file wct.config.json",
     "build": "tsc",
-    "watch": "tsc --watch",
-    "prepare": "npm run build"
+    "watch": "tsc --watch"
   },
   "homepage": "https://github.com/oneupsoft/oneup-layout",
   "author": {

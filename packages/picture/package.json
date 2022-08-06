@@ -22,8 +22,7 @@
     "republish": "npm unpublish --force @oneup/oneup-picture && npm publish",
     "test": "npm run build && wct --config-file wct.config.json",
     "build": "tsc",
-    "watch": "tsc --watch",
-    "prepare": "npm run build"
+    "watch": "tsc --watch"
   },
   "homepage": "https://github.com/oneupsoft/oneup-picture",
   "author": {

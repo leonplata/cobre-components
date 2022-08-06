@@ -115,8 +115,7 @@
     "republish": "npm unpublish --force @oneup/style-bootstrap4 && npm publish",
     "test": "npm run build && wct --config-file wct.config.json",
     "build": "tsc",
-    "watch": "tsc --watch",
-    "prepare": "npm run build"
+    "watch": "tsc --watch"
   },
   "repository": {
     "type": "git",
