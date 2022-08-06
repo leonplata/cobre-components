@@ -1,11 +1,8 @@
-# `@oneup/core-website`
+# @oneup/core-website
 
-> TODO: description
+## Setup development environment
 
-## Usage
-
+Run TypeScript compiler
 ```
-const coreWebsite = require('@oneup/core-website');
-
-// TODO: DEMONSTRATE API
+$ npm run watch
 ```

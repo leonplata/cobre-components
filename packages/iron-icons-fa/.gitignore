@@ -1,0 +1,12 @@
+/node_modules/
+
+#Compiler Output
+/common.icons.d.ts
+/common.icons.js
+/common.icons.js.map
+/social-brand.icons.d.ts
+/social-brand.icons.js
+/social-brand.icons.js.map
+/index.d.ts
+/index.js
+/index.js.map

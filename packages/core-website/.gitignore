@@ -1,0 +1,9 @@
+/node_modules/
+
+#Compiler Output
+/singleton/
+/utils/
+/interfaces/
+/index.d.ts
+/index.js
+/index.js.map
