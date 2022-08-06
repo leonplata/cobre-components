@@ -1,0 +1,65 @@
+{
+  "name": "@oneup/oneup-drawer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "/src/",
+    "/oneup-drawer.d.ts",
+    "/oneup-drawer.js",
+    "/oneup-drawer.js.map",
+    "/oneup-drawer.element.d.ts",
+    "/oneup-drawer.element.js",
+    "/oneup-drawer.element.js.map",
+    "/oneup-drawer.setup.d.ts",
+    "/oneup-drawer.setup.js",
+    "/oneup-drawer.setup.js.map",
+    "/index.d.ts",
+    "/index.js",
+    "/index.js.map"
+  ],
+  "scripts": {
+    "republish": "npm unpublish --force @oneup/oneup-drawer && npm publish",
+    "test": "npm run build && wct --config-file wct.config.json",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepare": "npm run build",
+    "storybook": "concurrently --kill-others --names tsc,storybook \"npm run tsc:watch\" \"start-storybook --node-resolve --watch --open\"",
+    "storybook:build": "build-storybook",
+    "tsc:watch": "tsc --watch"
+  },
+  "homepage": "https://github.com/oneupsoft/oneup-drawer",
+  "author": {
+    "name": "OneupSoft",
+    "email": "developers@1upsoft.com"
+  },
+  "bugs": {
+    "url": "https://github.com/oneupsoft/oneup-drawer/issues",
+    "email": "developers@1upsoft.com"
+  },
+  "license": "BSD-3-Clause",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.4.3",
+    "autobind-decorator": "^2.4.0",
+    "lit": "^2.2.8",
+    "lit-element": "^2.3.1"
+  },
+  "devDependencies": {
+    "@open-wc/demoing-storybook": "^2.3.6",
+    "@polymer/test-fixture": "^4.0.2",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "chai": "^4.2.0",
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
+    "husky": "^4.2.5",
+    "mocha": "^7.1.1",
+    "typescript": "^3.8.3",
+    "wct-mocha": "^1.0.1"
+  }
+}

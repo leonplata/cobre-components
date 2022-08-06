@@ -1,0 +1,12 @@
+/node_modules/
+
+#Compiler Output
+/oneup-link.d.ts
+/oneup-link.js
+/oneup-link.js.map
+/oneup-link.base.d.ts
+/oneup-link.base.js
+/oneup-link.base.js.map
+/oneup-link.styles.d.ts
+/oneup-link.styles.js
+/oneup-link.styles.js.map

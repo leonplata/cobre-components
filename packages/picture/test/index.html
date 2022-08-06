@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oneup-picture</title>
+  <style>
+    body {
+      font-family: Helvetica, Arial, Sans-Serif;
+      padding: 0 32px;
+    }
+    code {
+      font-family: Consolas, monaco, monospace;
+    }
+  </style>
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../node_modules/@polymer/test-fixture/test-fixture.js"></script>
+  <script src="../node_modules/wct-mocha/wct-mocha.js"></script>
+</head>
+<body>
+  <h1><code>&lt;oneup-picture&gt;</code></h1>
+  <h2>Testing placeholder on multiple image sizes</h2>
+  <p>
+    The blur depth should be relative to the area of the picture, if a picture is
+    very small then the blur depth should be low but on large images the blur
+    depth should be high.
+  </p>
+  <!--  10% -->
+  <!--<oneup-picture
+    id="fixture-1"
+    width="95"
+    height="71"
+  >
+  </oneup-picture>-->
+  <!--  25% -->
+  <!--<oneup-picture
+    id="fixture-2"
+    width="236"
+    height="178"
+  >
+  </oneup-picture>-->
+  <!--  50% -->
+  <!--<oneup-picture
+    id="fixture-3"
+    width="475"
+    height="356"
+  >
+  </oneup-picture>-->
+  <!--  75% -->
+  <!--<oneup-picture
+    id="fixture-4"
+    width="712"
+    height="534"
+  >
+  </oneup-picture>-->
+  <!-- 100% -->
+  <!-- <oneup-picture
+    id="fixture-5"
+    width="950"
+    height="712"
+  >
+  </oneup-picture>-->
+
+  <oneup-picture
+    id="fixture-1"
+    width="574"
+    height="280"
+    src="http://localhost:3100/buenos-aires.jpg"
+    placeholder-src="http://localhost:3100/buenos-aires.placeholder.jpg"
+  >
+  </oneup-picture>
+  <oneup-picture
+    id="fixture-2"
+    width="373"
+    height="280"
+    src="http://localhost:3100/easter.jpg"
+    placeholder-src="http://localhost:3100/easter.placeholder.jpg"
+  >
+  </oneup-picture>
+  <oneup-picture
+    id="fixture-3"
+    width="393"
+    height="280"
+    src="http://localhost:3100/flower-bee-pollen.jpg"
+    placeholder-src="http://localhost:3100/flower-bee-pollen.placeholder.jpg"
+  >
+  </oneup-picture>
+  <oneup-picture
+    id="fixture-4"
+    width="420"
+    height="280"
+    src="http://localhost:3100/light-dawn-landscape.jpg"
+    placeholder-src="http://localhost:3100/light-dawn-landscape.placeholder.jpg"
+  >
+  </oneup-picture>
+  <h2>Testing fluid images</h2>
+  <oneup-picture
+    id="fixture-5"
+    width="413"
+    height="280"
+    src="http://localhost:3100/university-center-in-winter.gif"
+    placeholder-src="http://localhost:3100/university-center-in-winter.placeholder.jpg"
+    fluid
+  >
+  </oneup-picture>
+  <script type="module" src="../oneup-picture.element.spec.js"></script>
+</body>
+</html>

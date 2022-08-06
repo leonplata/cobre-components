@@ -1,0 +1,31 @@
+{
+  "name": "@oneup/oneup-collapse",
+  "version": "0.1.0-alpha.0",
+  "description": "",
+  "main": "oneup-collapse.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oneupsoft/oneup-collapse.git"
+  },
+  "author": {
+    "name": "OneupSoft",
+    "email": "developers@1upsoft.com"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/oneupsoft/oneup-collapse/issues",
+    "email": "developers@1upsoft.com"
+  },
+  "homepage": "https://github.com/oneupsoft/oneup-collapse#readme",
+  "dependencies": {
+    "@aeb/aeb-shared-styles": "^1.0.0",
+    "@polymer/iron-collapse": "^3.0.1",
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/polymer": "^3.4.1",
+    "lit": "^2.2.8"
+  }
+}

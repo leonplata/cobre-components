@@ -1,0 +1,46 @@
+{
+  "name": "@oneup/oneup-layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "/src/",
+    "/oneup-layout.element.d.ts",
+    "/oneup-layout.element.js",
+    "/oneup-layout.element.js.map",
+    "/index.d.ts",
+    "/index.js",
+    "/index.js.map",
+    "/responsiveness.d.ts",
+    "/responsiveness.js",
+    "/responsiveness.js.map"
+  ],
+  "scripts": {
+    "republish": "npm unpublish --force @oneup/oneup-layout && npm publish",
+    "test": "npm run build && wct --config-file wct.config.json",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepare": "npm run build"
+  },
+  "homepage": "https://github.com/oneupsoft/oneup-layout",
+  "author": {
+    "name": "OneupSoft",
+    "email": "developers@1upsoft.com"
+  },
+  "bugs": {
+    "url": "https://github.com/oneupsoft/oneup-layout/issues",
+    "email": "developers@1upsoft.com"
+  },
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@oneup/oneup-drawer": "^1.0.0",
+    "@oneup/oneup-sticky": "^1.0.0",
+    "@oneup/style-bootstrap4": "^1.0.0",
+    "autobind-decorator": "^2.4.0",
+    "lit": "^2.2.8",
+    "lit-element": "^2.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}

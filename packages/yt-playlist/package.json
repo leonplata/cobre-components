@@ -1,0 +1,44 @@
+{
+  "name": "@oneup/oneup-yt-playlist",
+  "version": "0.1.0-alpha.1",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "/src/",
+    "/oneup-yt-playlist.d.ts",
+    "/oneup-yt-playlist.js",
+    "/oneup-yt-playlist.js.map",
+    "/oneup-yt-playlist.element.d.ts",
+    "/oneup-yt-playlist.element.js",
+    "/oneup-yt-playlist.element.js.map",
+    "/index.d.ts",
+    "/index.js",
+    "/index.js.map"
+  ],
+  "scripts": {
+    "republish": "npm unpublish --force @oneup/oneup-yt-playlist && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oneupsoft/oneup-yt-playlist.git"
+  },
+  "author": {
+    "name": "OneupSoft",
+    "email": "developers@1upsoft.com"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/oneupsoft/oneup-yt-playlist/issues"
+  },
+  "homepage": "https://github.com/oneupsoft/oneup-yt-playlist#readme",
+  "dependencies": {
+    "@polymer/polymer": "^3.4.1",
+    "lit": "^2.2.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  }
+}

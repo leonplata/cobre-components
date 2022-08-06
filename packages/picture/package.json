@@ -1,0 +1,60 @@
+{
+  "name": "@oneup/oneup-picture",
+  "version": "1.1.0",
+  "description": "A webcomponent to lazy load pictures",
+  "main": "index.js",
+  "files": [
+    "/src/",
+    "/oneup-picture.d.ts",
+    "/oneup-picture.js",
+    "/oneup-picture.js.map",
+    "/oneup-picture.base.d.ts",
+    "/oneup-picture.base.js",
+    "/oneup-picture.base.js.map",
+    "/oneup-picture.styles.d.ts",
+    "/oneup-picture.styles.js",
+    "/oneup-picture.styles.js.map",
+    "/index.d.ts",
+    "/index.js",
+    "/index.js.map"
+  ],
+  "scripts": {
+    "republish": "npm unpublish --force @oneup/oneup-picture && npm publish",
+    "test": "npm run build && wct --config-file wct.config.json",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepare": "npm run build"
+  },
+  "homepage": "https://github.com/oneupsoft/oneup-picture",
+  "author": {
+    "name": "OneupSoft",
+    "email": "developers@1upsoft.com"
+  },
+  "bugs": {
+    "url": "https://github.com/oneupsoft/oneup-picture/issues",
+    "email": "developers@1upsoft.com"
+  },
+  "license": "BSD-3-Clause",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build"
+    }
+  },
+  "dependencies": {
+    "@oneup/core-website": "^1.0.3",
+    "@webcomponents/webcomponentsjs": "^2.4.3",
+    "lit": "^2.2.8",
+    "lit-element": "^2.3.1"
+  },
+  "devDependencies": {
+    "@polymer/test-fixture": "^4.0.2",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "husky": "^4.2.5",
+    "mocha": "^7.1.2",
+    "typescript": "^3.9.10",
+    "wct-mocha": "^1.1.0"
+  }
+}
