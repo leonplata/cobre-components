@@ -1,6 +1,6 @@
 {
   "name": "@oneup/oneup-layout",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "files": [
@@ -33,9 +33,9 @@
   },
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@oneup/oneup-drawer": "^1.0.0",
-    "@oneup/oneup-sticky": "^1.0.0",
-    "@oneup/style-bootstrap4": "^1.0.0",
+    "@oneup/oneup-drawer": "^2.0.0",
+    "@oneup/oneup-sticky": "^2.0.0",
+    "@oneup/style-bootstrap4": "^2.0.0",
     "autobind-decorator": "^2.4.0",
     "lit": "^2.2.8",
     "lit-element": "^2.3.1"

@@ -1,6 +1,6 @@
 {
   "name": "@oneup/oneup-sticky",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A webcomponent to stick on the screen border when scrolling",
   "main": "index.js",
   "files": [
