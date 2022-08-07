@@ -1,0 +1,14 @@
+{
+  "name": "@oneup/granite-bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "granite-bootstrap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polymer/polymer": "^3.4.1"
+  }
+}
