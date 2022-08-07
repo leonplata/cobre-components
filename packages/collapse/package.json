@@ -3,8 +3,15 @@
   "version": "2.0.0",
   "description": "",
   "main": "oneup-collapse.js",
+  "files": [
+    "/src/",
+    "/oneup-collapse.d.ts",
+    "/oneup-collapse.js",
+    "/oneup-collapse.js.map"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
     "genPackagelock": "npm i --package-lock-only"
   },
   "repository": {

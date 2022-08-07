@@ -113,7 +113,7 @@
   ],
   "scripts": {
     "republish": "npm unpublish --force @oneup/style-bootstrap4 && npm publish",
-    "test": "npm run build && wct --config-file wct.config.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "watch": "tsc --watch",
     "genPackagelock": "npm i --package-lock-only"

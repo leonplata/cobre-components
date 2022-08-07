@@ -5,7 +5,10 @@
   "version": "independent",
   "command": {
     "publish": {
-      "registry": "https://npm.1upsoft.com"
+      "registry": "https://npm.1upsoft.com",
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "ignoreChanges": ["*.md", ".spec.ts", ".stories.ts"]
     }
   }
 }

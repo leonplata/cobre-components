@@ -42,8 +42,6 @@
     "lit": "^2.2.8"
   },
   "devDependencies": {
-    "@open-wc/demoing-storybook": "^2.3.6",
-    "concurrently": "^5.2.0",
     "typescript": "^4.7.4"
   }
 }

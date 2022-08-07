@@ -71,6 +71,8 @@ class OneupCollapseElement extends PolymerElement {
     };
   }
 
+  opened: any;
+
   _toggle() {
     this.opened = !this.opened;
   }

@@ -232,6 +232,12 @@ export class OneupAlbumElement extends PolymerElement {
     };
   }
 
+  album: any;
+  albumUrl: any;
+  currentImage: any;
+  show: any;
+  loading: any;
+
   async connectedCallback() {
     super.connectedCallback();
     const response = await fetch(this.albumUrl);
@@ -240,11 +246,11 @@ export class OneupAlbumElement extends PolymerElement {
     }
   }
 
-  _computeIndex(currentImage, album = []) {
+  _computeIndex(currentImage: any, album: any[] = []) {
     return album.indexOf(currentImage) + 1;
   }
 
-  _switchImage(event) {
+  _switchImage(event: any) {
     this.currentImage = event.model.image;
     this.show = true;
   }
@@ -257,7 +263,7 @@ export class OneupAlbumElement extends PolymerElement {
     this.show = false;
   }
 
-  _updateCurrentImage(album) {
+  _updateCurrentImage(album: any) {
     this.currentImage = album[0];
   }
 
