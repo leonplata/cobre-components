@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "postinstall": "lerna run --parallel genPackagelock"
+  },
   "workspaces": [
     "packages/*"
   ],

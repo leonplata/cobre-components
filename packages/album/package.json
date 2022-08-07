@@ -4,7 +4,8 @@
   "description": "",
   "main": "oneup-album.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "genPackagelock": "npm i --package-lock-only"
   },
   "repository": {
     "type": "git",

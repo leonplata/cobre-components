@@ -25,7 +25,8 @@
     "watch": "tsc --watch",
     "storybook": "concurrently --kill-others --names tsc,storybook \"npm run tsc:watch\" \"start-storybook --node-resolve --watch --open\"",
     "storybook:build": "build-storybook",
-    "tsc:watch": "tsc --watch"
+    "tsc:watch": "tsc --watch",
+    "genPackagelock": "npm i --package-lock-only"
   },
   "homepage": "https://github.com/oneupsoft/oneup-drawer",
   "author": {
