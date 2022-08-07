@@ -27,5 +27,8 @@
     "@polymer/iron-icons": "^3.0.1",
     "@polymer/polymer": "^3.4.1",
     "lit": "^2.2.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
   }
 }
