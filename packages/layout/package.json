@@ -37,8 +37,7 @@
     "@oneup/oneup-sticky": "^2.0.0",
     "@oneup/style-bootstrap4": "^2.0.0",
     "autobind-decorator": "^2.4.0",
-    "lit": "^2.2.8",
-    "lit-element": "^2.3.1"
+    "lit": "^2.2.8"
   },
   "devDependencies": {
     "typescript": "^4.7.4"

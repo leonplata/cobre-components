@@ -133,7 +133,7 @@
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/oneupsoft/style-bootstrap4#readme",
   "dependencies": {
-    "lit-element": "^2.3.1"
+    "lit": "^2.2.8"
   },
   "devDependencies": {
     "typescript": "^4.7.4"
