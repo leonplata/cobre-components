@@ -5,6 +5,12 @@
   "main": "oneup-collapse.js",
   "files": [
     "/src/",
+    "/oneup-collapse.base.d.ts",
+    "/oneup-collapse.base.js",
+    "/oneup-collapse.base.js.map",
+    "/oneup-collapse.styles.d.ts",
+    "/oneup-collapse.styles.js",
+    "/oneup-collapse.styles.js.map",
     "/oneup-collapse.d.ts",
     "/oneup-collapse.js",
     "/oneup-collapse.js.map"
@@ -29,11 +35,9 @@
   },
   "homepage": "https://github.com/oneupsoft/oneup-collapse#readme",
   "dependencies": {
-    "@aeb/aeb-shared-styles": "^1.0.0",
     "@polymer/iron-collapse": "^3.0.1",
     "@polymer/iron-icon": "^3.0.1",
     "@polymer/iron-icons": "^3.0.1",
-    "@polymer/polymer": "^3.4.1",
     "lit": "^2.2.8"
   },
   "devDependencies": {
