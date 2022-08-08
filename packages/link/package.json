@@ -1,6 +1,6 @@
 {
   "name": "@oneup/oneup-link",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A simple link with routing",
   "main": "oneup-link.js",
   "files": [

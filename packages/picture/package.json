@@ -1,6 +1,6 @@
 {
   "name": "@oneup/oneup-picture",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A webcomponent to lazy load pictures",
   "main": "index.js",
   "files": [

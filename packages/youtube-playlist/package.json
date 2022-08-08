@@ -1,6 +1,6 @@
 {
   "name": "@oneup/oneup-youtube-playlist",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "",
   "type": "module",
   "main": "oneup-youtube-playlist.js",
