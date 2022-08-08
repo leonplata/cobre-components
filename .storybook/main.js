@@ -6,10 +6,13 @@ module.exports = {
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
-    '@storybook/addon-a11y'
+    '@storybook/addon-a11y',
   ],
   framework: '@storybook/web-components',
   core: {
-    builder: '@storybook/builder-webpack5'
-  }
+    builder: '@storybook/builder-webpack5',
+  },
+  staticDirs: [
+    './public',
+  ],
 }

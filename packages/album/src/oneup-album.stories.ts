@@ -6,5 +6,5 @@ export default {
 };
 
 export const Default = () => html`
-  <oneup-album></oneup-album>
+  <oneup-album album-url="/demo-album.json"></oneup-album>
 `;
