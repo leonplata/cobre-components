@@ -1,9 +1,15 @@
 node_modules/
 
 #Compiler Output
-/oneup-album.d.ts
-/oneup-album.js
-/oneup-album.js.map
+/oneup-album.base.d.ts
+/oneup-album.base.js
+/oneup-album.base.js.map
 /oneup-album.interfaces.d.ts
 /oneup-album.interfaces.js
 /oneup-album.interfaces.js.map
+/oneup-album.styles.d.ts
+/oneup-album.styles.js
+/oneup-album.styles.js.map
+/oneup-album.d.ts
+/oneup-album.js
+/oneup-album.js.map

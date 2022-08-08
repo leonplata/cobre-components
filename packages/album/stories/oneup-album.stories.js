@@ -1,5 +1,5 @@
 import { html } from 'lit-html';
-import './oneup-album';
+import '../oneup-album.js';
 
 export default {
   title: 'oneup-album'

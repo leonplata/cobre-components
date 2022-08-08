@@ -2,15 +2,22 @@
   "name": "@oneup/oneup-album",
   "version": "2.0.1",
   "description": "",
+  "type": "module",
   "main": "oneup-album.js",
   "files": [
     "/src/",
-    "/oneup-album.d.ts",
-    "/oneup-album.js",
-    "/oneup-album.js.map",
+    "/oneup-album.base.d.ts",
+    "/oneup-album.base.js",
+    "/oneup-album.base.js.map",
     "/oneup-album.interfaces.d.ts",
     "/oneup-album.interfaces.js",
-    "/oneup-album.interfaces.js.map"
+    "/oneup-album.interfaces.js.map",
+    "/oneup-album.styles.d.ts",
+    "/oneup-album.styles.js",
+    "/oneup-album.styles.js.map",
+    "/oneup-album.d.ts",
+    "/oneup-album.js",
+    "/oneup-album.js.map"
   ],
   "scripts": {
     "republish": "npm unpublish --force @oneup/oneup-album && npm publish",
