@@ -38,7 +38,7 @@
   "homepage": "https://github.com/oneupsoft/iron-icons-fa#readme",
   "dependencies": {
     "@polymer/iron-iconset-svg": "^3.0.1",
-    "@polymer/polymer": "^3.4.1",
+    "@polymer/polymer": "^3.0.0",
     "lit": "^2.2.8"
   },
   "devDependencies": {

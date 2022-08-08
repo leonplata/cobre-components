@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@polymer/polymer": "^3.4.1"
+    "@polymer/polymer": "^3.0.0"
   }
 }
