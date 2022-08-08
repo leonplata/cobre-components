@@ -1,0 +1,48 @@
+{
+  "name": "@oneup/oneup-youtube-playlist",
+  "version": "2.0.1",
+  "description": "",
+  "type": "module",
+  "main": "oneup-youtube-playlist.js",
+  "files": [
+    "/src/",
+    "/oneup-youtube-playlist.base.d.ts",
+    "/oneup-youtube-playlist.base.js",
+    "/oneup-youtube-playlist.base.js.map",
+    "/oneup-youtube-playlist.interfaces.d.ts",
+    "/oneup-youtube-playlist.interfaces.js",
+    "/oneup-youtube-playlist.interfaces.js.map",
+    "/oneup-youtube-playlist.styles.d.ts",
+    "/oneup-youtube-playlist.styles.js",
+    "/oneup-youtube-playlist.styles.js.map",
+    "/oneup-youtube-playlist.d.ts",
+    "/oneup-youtube-playlist.js",
+    "/oneup-youtube-playlist.js.map"
+  ],
+  "scripts": {
+    "republish": "npm unpublish --force @oneup/oneup-youtube-playlist && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "genPackagelock": "npm i --package-lock-only"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oneupsoft/oneup-youtube-playlist.git"
+  },
+  "author": {
+    "name": "OneupSoft",
+    "email": "developers@1upsoft.com"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/oneupsoft/oneup-youtube-playlist/issues"
+  },
+  "homepage": "https://github.com/oneupsoft/oneup-youtube-playlist#readme",
+  "dependencies": {
+    "lit": "^2.2.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
