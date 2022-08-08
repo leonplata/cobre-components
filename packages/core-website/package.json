@@ -1,6 +1,6 @@
 {
   "name": "@oneup/core-website",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Core interfaces and tools to create web sites and web apps",
   "main": "index.js",
   "files": [

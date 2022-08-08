@@ -1,6 +1,6 @@
 {
   "name": "@oneup/oneup-pagination",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A numerated list of buttons to navigate between pages",
   "main": "oneup-pagination.js",
   "files": [

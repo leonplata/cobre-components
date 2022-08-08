@@ -1,6 +1,6 @@
 {
   "name": "@oneup/oneup-wip",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Work in progress webcomponent",
   "main": "index.js",
   "files": [
@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/oneupsoft/oneup-wip#readme",
   "dependencies": {
-    "@oneup/iron-icons-fa": "^2.0.0",
+    "@oneup/iron-icons-fa": "^2.0.1",
     "@polymer/iron-icon": "^3.0.1",
     "lit": "^2.2.8"
   },
