@@ -35,11 +35,6 @@
     "email": "developers@1upsoft.com"
   },
   "license": "BSD-3-Clause",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build"
-    }
-  },
   "dependencies": {
     "@oneup/core-website": "^2.0.1",
     "@webcomponents/webcomponentsjs": "^2.4.3",

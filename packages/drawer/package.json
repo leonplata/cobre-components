@@ -38,11 +38,6 @@
     "email": "developers@1upsoft.com"
   },
   "license": "BSD-3-Clause",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build"
-    }
-  },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.4.3",
     "autobind-decorator": "^2.4.0",

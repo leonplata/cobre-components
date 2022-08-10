@@ -6,7 +6,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "lerna run build",
-    "build:watch": "lerna run build:watch"
+    "build:watch": "lerna run build:watch",
+    "bootstrap": "npx lerna bootstrap --hoist"
   },
   "workspaces": [
     "packages/*"
