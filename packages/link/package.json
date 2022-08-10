@@ -1,6 +1,6 @@
 {
   "name": "@oneup/oneup-link",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A simple link with routing",
   "main": "oneup-link.js",
   "files": [
@@ -33,7 +33,7 @@
   },
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@oneup/core-website": "^2.0.1",
+    "@oneup/core-website": "^2.0.2",
     "@webcomponents/webcomponentsjs": "^2.4.3",
     "lit": "^2.2.8"
   },
