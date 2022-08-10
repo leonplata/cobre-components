@@ -8,7 +8,12 @@
       "registry": "https://npm.1upsoft.com",
       "allowBranch": "master",
       "conventionalCommits": true,
-      "ignoreChanges": ["*.md", ".spec.ts", ".stories.ts"]
+      "ignoreChanges": [
+        "*.md",
+        ".spec.ts",
+        ".stories.ts",
+        "package-lock.json"
+      ]
     }
   }
 }
