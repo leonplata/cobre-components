@@ -1,0 +1,12 @@
+node_modules/
+
+#Compiler Output
+/oneup-social-links.base.d.ts
+/oneup-social-links.base.js
+/oneup-social-links.base.js.map
+/oneup-social-links.styles.d.ts
+/oneup-social-links.styles.js
+/oneup-social-links.styles.js.map
+/oneup-social-links.d.ts
+/oneup-social-links.js
+/oneup-social-links.js.map
