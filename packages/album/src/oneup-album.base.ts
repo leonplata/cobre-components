@@ -4,32 +4,39 @@ import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import "@polymer/iron-icon/iron-icon.js";
 import "@polymer/iron-icons/hardware-icons.js";
-import type { AlbumItem } from './oneup-album.interfaces.js';
+import type { AlbumImage } from './oneup-album.interfaces.js';
 
-export class OneupAlbumBase extends LitElement {
+export abstract class OneupAlbumBase extends LitElement {
 
   @property({ type: String, attribute: 'album-url' })
-  albumUrl = '';
+  albumUrl?: string;
 
-  @property({ type: Array, attribute: 'album' })
-  album: AlbumItem[] = [];
+  @property({ type: Boolean, attribute: 'slideshow' })
+  slideshow = false;
 
-  @state()
-  protected currentImage?: AlbumItem;
-
-  @state()
-  protected loading = true;
+  @property({ type: Number, attribute: 'slideshow-delay' })
+  slideshowDelay = 1000 * 10;
 
   @state()
   protected show = false;
 
   @state()
+  protected currentImage?: AlbumImage;
+
+  @state()
+  protected album?: AlbumImage[];
+
+  @state()
+  protected loading = false;
+
+  @state()
   protected grid = false;
 
-  protected willUpdate(changedProperties: PropertyValues) {
-    super.willUpdate(changedProperties);
-    if (changedProperties.has('albumUrl')) {
-      this._loadAlbum(this.albumUrl);
+  private _interval?: () => void;
+
+  willUpdate(changedProperties: PropertyValues) {
+    if (changedProperties.has('albumUrl') && this.albumUrl) {
+      this._fetchAlbum(this.albumUrl);
     }
     if (changedProperties.has('album')) {
       this._updateCurrentImage(this.album);
@@ -37,24 +44,48 @@ export class OneupAlbumBase extends LitElement {
     if (changedProperties.has('currentImage')) {
       this._toggleBlur();
     }
-  }
-  
-  private async _loadAlbum(albumUrl: string) {
-    if (!albumUrl) {
-      this.album = [];
-      return;
+    if (changedProperties.has('show')) {
+      this._observeShow(this.show);
     }
-    const response = await fetch(this.albumUrl);
+    super.willUpdate(changedProperties);
+  }
+
+  private async _fetchAlbum(albumUrl: string) {
+    const response = await fetch(albumUrl);
     if (response.ok) {
       this.album = await response.json();
     }
+    if (this.slideshow) {
+      this._interval = this._setSlideshowInterval();
+    }
   }
 
-  private _computeIndex(currentImage: AlbumItem, album: AlbumItem[] = []) {
+  private _setSlideshowInterval() {
+    const interval = setInterval(() => this.goNext(), this.slideshowDelay);
+    return () => clearInterval(interval);
+  }
+
+  private _observeShow(show: boolean) {
+    if (show) {
+      document.body.classList.add('alp-album-full');
+    } else {
+      document.body.classList.remove('alp-album-full');
+    }
+  }
+
+  private _isFirst(currentImage: AlbumImage, album: AlbumImage[]) {
+    return album.indexOf(currentImage) === 0;
+  }
+
+  private _isLast(currentImage: AlbumImage, album: AlbumImage[]) {
+    return album.indexOf(currentImage) === album.length - 1;
+  }
+
+  private _computeIndex(currentImage: AlbumImage, album: AlbumImage[] = []) {
     return album.indexOf(currentImage) + 1;
   }
 
-  private _switchImage(image: AlbumItem) {
+  private _switchImage(image: AlbumImage) {
     this.currentImage = image;
     this.show = true;
   }
@@ -67,21 +98,53 @@ export class OneupAlbumBase extends LitElement {
     this.show = false;
   }
 
-  private _updateCurrentImage(album: AlbumItem[]) {
-    this.currentImage = album[0];
+  private _updateCurrentImage(album?: AlbumImage[]) {
+    if (album) {
+      this.currentImage = album[0];
+    }
+  }
+
+  private _handleGoPrev() {
+    if (this.slideshow) {
+      if (this._interval) {
+        this._interval();
+      }
+      this._interval = this._setSlideshowInterval();
+    }
+    this.goPrev();
+  }
+
+  private _handleGoNext() {
+    if (this.slideshow) {
+      if (this._interval) {
+        this._interval();
+      }
+      this._interval = this._setSlideshowInterval();
+    }
+    this.goNext();
   }
 
   protected goPrev() {
-    const index = this.currentImage ? this.album.indexOf(this.currentImage) : -1;
+    if (!this.album || !this.currentImage) {
+      return;
+    }
+    const index = this.album.indexOf(this.currentImage);
     if (index > 0) {
       this.currentImage = this.album[index - 1];
+    } else {
+      this.currentImage = this.album[this.album!.length - 1];
     }
   }
 
   protected goNext() {
-    const index = this.currentImage ? this.album.indexOf(this.currentImage) : -1;
+    if (!this.album || !this.currentImage) {
+      return;
+    }
+    const index = this.album.indexOf(this.currentImage);
     if (index < this.album.length - 1) {
       this.currentImage = this.album[index + 1];
+    } else {
+      this.currentImage = this.album[0];
     }
   }
 
@@ -96,7 +159,7 @@ export class OneupAlbumBase extends LitElement {
   render() {
     return html`
       <div class="gallery">
-        ${this.grid ? this.album.map(image => html`
+        ${this.grid ? this.album?.map(image => html`
           <div
             class="thumb"
             style=${styleMap({
@@ -105,18 +168,12 @@ export class OneupAlbumBase extends LitElement {
             @click=${() => this._switchImage(image)}
           >
           </div>
-        `):html`
+        `) : this.currentImage ? html`
           <div class="normal">
-            <div class="controls" style="z-index: 100;">
-              <div style="padding: 8px;">
-                ${this.currentImage && this._computeIndex(this.currentImage, this.album)} / ${this.album.length}
-              </div>
-              <div style="flex: 1;"></div>
-            </div>
             <div class="content">
               <img
                 class="loader"
-                .src=${this.currentImage?.full ?? ''}
+                .src=${this.currentImage.full}
                 @load=${() => this._imageLoaded()}
               >
               <div
@@ -129,48 +186,49 @@ export class OneupAlbumBase extends LitElement {
                   'background-image': `url(${this.currentImage?.thumb ?? ''})`
                 })}
                 @click=${() => this.showBig()}
-              >
-              </div>
+              ></div>
               <div
                 class="full-2"
                 style=${styleMap({
                   'background-image': `url(${this.currentImage?.full ?? ''})`
                 })}
                 @click=${() => this.showBig()}
-              >
-              </div>
+              ></div>
               <div
                 class="button button-left"
-                @click=${() => this.goPrev()}
+                @click=${() => this._handleGoPrev()}
+                .hidden=${this._isFirst(this.currentImage, this.album || [])}
               >
                 <iron-icon icon="hardware:keyboard-arrow-left"></iron-icon>
               </div>
               <div
                 class="button button-right"
-                @click=${() => this.goNext()}
+                @click=${() => this._handleGoNext()}
+                .hidden=${this._isLast(this.currentImage, this.album || [])}
               >
                 <iron-icon icon="hardware:keyboard-arrow-right"></iron-icon>
               </div>
+              <div class="comment">
+                <div class="dark-glass">
+                  ${this.currentImage.description}
+                </div>
+              </div>
+            </div>
+            <div class="controls">
+              <div style="padding: 8px;">
+                ${this._computeIndex(this.currentImage, this.album)} / ${this.album?.length}
+              </div>
+              <div style="flex: 1;"></div>
             </div>
           </div>
-        `}
+        `: null}
       </div>
-      ${this.show ? html`
+      ${this.show && this.currentImage ? html`
         <div class="fixed">
-          <div class="controls">
-            <div style="padding: 8px;">
-              ${this.currentImage && this._computeIndex(this.currentImage, this.album)} / ${this.album.length}
-            </div>
-            <div style="flex: 1;"></div>
-            <div
-              class="control-button"
-              @click=${() => this.closeFixed()}
-            >&#x2573;</div>
-          </div>
           <div class="content">
             <img
               class="loader"
-              .src=${this.currentImage?.full ?? ''}
+              .src=${this.currentImage.full}
               @load=${() => this._imageLoaded()}
             >
             <div
@@ -193,19 +251,37 @@ export class OneupAlbumBase extends LitElement {
             </div>
             <div
               class="button button-left"
-              @click=${() => this.goPrev()}
+              .hidden=${this._isFirst(this.currentImage, this.album || [])}
+              @click=${() => this._handleGoPrev()}
             >
               <iron-icon icon="hardware:keyboard-arrow-left"></iron-icon>
             </div>
             <div
               class="button button-right"
-              @click=${() => this.goNext()}
+              .hidden=${this._isLast(this.currentImage, this.album || [])}
+              @click=${() => this._handleGoNext()}
             >
               <iron-icon icon="hardware:keyboard-arrow-right"></iron-icon>
             </div>
+            <div class="comment">
+              <div class="dark-glass">
+                ${this.currentImage.description}
+              </div>
+            </div>
+          </div>
+          <div class="controls">
+            <div style="padding: 8px;">
+              ${this._computeIndex(this.currentImage, this.album)} / ${this.album?.length}
+            </div>
+            <div style="flex: 1;"></div>
+            <div
+              class="control-button"
+              @click=${() => this.closeFixed()}
+            >&#x2573;
+            </div>
           </div>
         </div>
-      `:null}
+      `: null}
     `;
   }
 }

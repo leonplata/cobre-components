@@ -14,19 +14,20 @@ export const styles = [
     }
     .full {
       min-height: 500px;
-      height: 90vh;
+      height: 100vh;
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
-      background-color: #2A2421;
+      background-color: #2a2421;
       margin: 2px;
     }
     .full-2 {
+      height: 80vh;
       min-height: 400px;
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
-      background-color: #2A2421;
+      background-color: #2a2421;
       margin: 2px;
       cursor: zoom-in;
     }
@@ -37,7 +38,7 @@ export const styles = [
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
-      background-color: #2A2421;
+      background-color: #2a2421;
       margin: 2px;
       cursor: pointer;
     }
@@ -57,7 +58,8 @@ export const styles = [
       flex: 1;
       position: relative;
       overflow: hidden;
-      width: 100%;
+      width: calc(100% - 46px);
+      margin-top: 46px;
     }
     .content .button {
       opacity: 0;
@@ -79,7 +81,7 @@ export const styles = [
       width: 24px;
       padding: 12px;
       border-radius: 50%;
-      background-color: #2A2421;
+      background-color: #2a2421;
       transition: all 0.2s ease-out;
     }
     .button:hover {
@@ -111,7 +113,7 @@ export const styles = [
     .normal {
       position: relative;
       display: flex;
-      width: 500px;
+      width: 100vw;
     }
     .fixed {
       position: fixed;
@@ -120,10 +122,10 @@ export const styles = [
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(0, 0, 0, .75);
+      background: rgba(0, 0, 0, 0.75);
       display: flex;
       align-items: center;
-      animation: fade-in .2s ease-out;
+      animation: fade-in 0.2s ease-out;
     }
     .controls {
       position: absolute;
@@ -134,18 +136,39 @@ export const styles = [
       background: black;
       color: white;
       display: flex;
-      z-index: 1001;
+      align-items: center;
+      padding: 0 8px;
     }
     .control-button {
-      width: 48px;
-      height: 48px;
-      padding: 10px;
+      padding: 8px;
+      font-weight: bold;
       user-select: none;
       cursor: pointer;
     }
+    .comment {
+      position: absolute;
+      bottom: 0;
+      font-size: 12px;
+    }
+    .dark-glass {
+      display: inline-flex;
+      color: #ddd;
+      border-radius: 4px;
+      padding: 8px;
+      margin: 8px;
+      background-color: rgba(0, 0, 0, 0.25);
+      text-shadow: 0px 0px 0px black, 0 0 1em rgba(0, 0, 0, 0.5), 0 0 0.2em rgba(0, 0, 0, 0.5);
+    }
+    [hidden] {
+      display: none !important;
+    }
     @keyframes fade-in {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
   `,
 ];
