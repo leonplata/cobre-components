@@ -1,0 +1,46 @@
+{
+  "name": "@oneup/oneup-snackbar",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "oneup-snackbar.js",
+  "files": [
+    "/src/",
+    "/oneup-snackbar.base.d.ts",
+    "/oneup-snackbar.base.js",
+    "/oneup-snackbar.base.js.map",
+    "/oneup-snackbar.styles.d.ts",
+    "/oneup-snackbar.styles.js",
+    "/oneup-snackbar.styles.js.map",
+    "/oneup-snackbar.d.ts",
+    "/oneup-snackbar.js",
+    "/oneup-snackbar.js.map"
+  ],
+  "scripts": {
+    "republish": "npm unpublish --force @oneup/oneup-snackbar && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "genPackagelock": "npm i --package-lock-only"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oneupsoft/oneup-ui.git"
+  },
+  "author": {
+    "name": "OneupSoft",
+    "email": "developers@1upsoft.com"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/oneupsoft/oneup-ui/issues",
+    "email": "developers@1upsoft.com"
+  },
+  "homepage": "https://github.com/oneupsoft/oneup-ui#readme",
+  "dependencies": {
+    "lit": "^2.2.8"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
