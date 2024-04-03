@@ -1,28 +1,39 @@
 {
-  "name": "root",
+  "name": "cobre-components",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "postinstall": "lerna run --parallel genPackagelock",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "build": "lerna run build",
-    "build:watch": "lerna run build:watch",
-    "bootstrap": "npx lerna bootstrap --hoist"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "@polymer/iron-collapse": "^3.0.1",
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "autobind-decorator": "^2.4.0",
+    "inversify": "^6.0.2",
+    "inversify-inject-decorators": "^3.1.0",
+    "lit": "^3.1.2",
+    "reflect-metadata": "^0.2.2"
+  },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
-    "@storybook/addon-a11y": "^6.5.10",
-    "@storybook/addon-actions": "^6.5.10",
-    "@storybook/addon-essentials": "^6.5.10",
-    "@storybook/addon-links": "^6.5.10",
-    "@storybook/builder-webpack5": "^6.5.10",
-    "@storybook/manager-webpack5": "^6.5.10",
-    "@storybook/web-components": "^6.5.10",
-    "babel-loader": "^8.2.5",
-    "lerna": "^5.3.0",
-    "lit-html": "^2.2.7"
+    "@chromatic-com/storybook": "1.2.25",
+    "@storybook/addon-essentials": "^8.0.5",
+    "@storybook/addon-links": "^8.0.5",
+    "@storybook/blocks": "^8.0.5",
+    "@storybook/test": "^8.0.5",
+    "@storybook/web-components": "^8.0.5",
+    "@storybook/web-components-vite": "^8.0.5",
+    "sass": "^1.72.0",
+    "storybook": "^8.0.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.1",
+    "vite-plugin-svgo": "^1.4.0"
   }
 }

@@ -1,0 +1,26 @@
+:host {
+  display: inline-block;
+}
+:host([fluid]) {
+  display: contents;
+  width: 100%;
+}
+.picture-container {
+  overflow: hidden;
+  position: relative;
+  animation: fadeIn .5s ease-in;
+}
+.picture-content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity .3s ease-in, transform .3s ease-in, filter .3s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

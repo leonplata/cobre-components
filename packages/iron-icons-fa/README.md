@@ -1,1 +1,0 @@
-# @oneup/iron-icons-fa
