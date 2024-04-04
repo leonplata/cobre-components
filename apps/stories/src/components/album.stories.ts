@@ -1,11 +1,11 @@
 import { html } from 'lit'
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type { IAlbum } from '@cobre/cobre-album';
+import type { IAlbumProps } from '@cobre/cobre-album';
 import '@cobre/cobre-album';
 
 const meta = {
   title: 'Album',
-  render: (args: IAlbum) => html`
+  render: (args: IAlbumProps) => html`
     <cobre-album
       .album=${args.album}
       .slideshow=${args.slideshow ?? false}
@@ -13,11 +13,11 @@ const meta = {
     >
     </cobre-album>
   `,
-} satisfies Meta<IAlbum>;
+} satisfies Meta<IAlbumProps>;
 
 export default meta;
 
-export const Default: StoryObj<IAlbum> = {
+export const Default: StoryObj<IAlbumProps> = {
   args: {
     album: [
       {
