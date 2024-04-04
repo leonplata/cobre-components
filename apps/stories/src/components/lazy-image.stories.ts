@@ -1,24 +1,32 @@
 import { html } from 'lit'
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type { IAlbumProps } from '@cobre/cobre-album';
-import '@cobre/cobre-album';
+import type { ILazyImageProps } from '@cobre/cobre-lazy-image';
+import '@cobre/cobre-lazy-image';
+import demo01Jpeg from '../assets/demo-01.jpeg'
+import demo01ThumbJpeg from '../assets/demo-01-thumb.jpg'
 
 const meta = {
   title: 'Lazy Image',
-  render: (args: IAlbumProps) => html`
-    <cobre-album
-      .album=${args.album}
-      .slideshow=${args.slideshow ?? false}
-      slideshow-delay=${args.slideshowDelay ?? 10000}
+  render: (args: ILazyImageProps) => html`
+    <cobre-lazy-image
+      .placeholderSrc=${args.placeholderSrc ?? ''}
+      .src=${args.src ?? ''}
+      .alt=${args.alt ?? ''}
+      .fluid=${args.fluid ?? false}
+      .width=${args.width ?? 1}
+      .height=${args.height ?? 1}
     >
-    </cobre-album>
+    </cobre-lazy-image>
   `,
-} satisfies Meta<IAlbumProps>;
+} satisfies Meta<ILazyImageProps>;
 
 export default meta;
 
-export const Default: StoryObj<IAlbumProps> = {
+export const Default: StoryObj<ILazyImageProps> = {
   args: {
-    album: []
+    src: demo01Jpeg,
+    placeholderSrc: demo01ThumbJpeg,
+    alt: 'Two best friends',
+    fluid: true,
   },
 };

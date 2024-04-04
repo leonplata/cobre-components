@@ -17,6 +17,7 @@
     "@cobre/cobre-collapse": "workspace:^",
     "@cobre/cobre-drawer": "workspace:^",
     "@cobre/cobre-layout": "workspace:^",
+    "@cobre/cobre-lazy-image": "workspace:^",
     "@cobre/cobre-sticky": "workspace:^",
     "@cobre/cobre-wip": "workspace:^",
     "@cobre/cobre-youtube-playlist": "workspace:^",

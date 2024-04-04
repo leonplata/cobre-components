@@ -6,18 +6,18 @@ const meta = {
   title: 'Layout',
   render: () => html`
     <cobre-layout>
-      <header slot="header">
+      <header slot="header" style="padding: 2rem 1rem;">
         Header
       </header>
-      <section slot="navigation">
+      <section slot="navigation" style="padding: 2rem 1rem;">
         Navigation
       </section>
-      <section slot="drawer">
+      <section slot="drawer" style="padding: 2rem 1rem;">
       </section>
-      <main slot="main" style="height: 200vh;">
+      <main slot="main" style="padding: 2rem 1rem; height: 200vh;">
         Main content
       </main>
-      <footer slot="footer">
+      <footer slot="footer" style="padding: 2rem 1rem;">
         Footer
       </footer>
     </cobre-layout>
