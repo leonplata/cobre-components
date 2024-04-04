@@ -1,0 +1,45 @@
+{
+  "name": "stories",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Leon Plata",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "nx storybook -p 6006",
+    "build-storybook": "nx build-storybook"
+  },
+  "dependencies": {
+    "@cobre/cobre-album": "workspace:^",
+    "@cobre/cobre-collapse": "workspace:^",
+    "@cobre/cobre-di": "workspace:^",
+    "@cobre/cobre-drawer": "workspace:^",
+    "@cobre/cobre-layout": "workspace:^",
+    "@cobre/cobre-lazy-image": "workspace:^",
+    "@cobre/cobre-link": "workspace:^",
+    "@cobre/cobre-pagination": "workspace:^",
+    "@cobre/cobre-snackbar": "workspace:^",
+    "@cobre/cobre-sticky": "workspace:^",
+    "@cobre/cobre-wip": "workspace:^",
+    "@cobre/cobre-youtube-playlist": "workspace:^",
+    "lit": "^3.1.2"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "1.2.26",
+    "@storybook/addon-essentials": "^8.0.5",
+    "@storybook/addon-links": "^8.0.5",
+    "@storybook/blocks": "^8.0.5",
+    "@storybook/test": "^8.0.5",
+    "@storybook/web-components": "^8.0.5",
+    "@storybook/web-components-vite": "^8.0.5",
+    "storybook": "^8.0.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  },
+  "nx": {
+    "includedScripts": []
+  }
+}

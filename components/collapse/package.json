@@ -1,0 +1,34 @@
+{
+  "name": "@cobre/cobre-collapse",
+  "version": "0.0.1-alpha.0",
+  "description": "",
+  "author": "Leon Plata",
+  "license": "BSD-3-Clause",
+  "type": "module",
+  "files": [
+    "/dist"
+  ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && nx build",
+    "preview": "nx preview"
+  },
+  "dependencies": {
+    "@polymer/iron-collapse": "^3.0.1",
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "lit": "^3.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.1",
+    "vite-plugin-no-bundle": "^4.0.0",
+    "vite-plugin-svgo": "^1.4.0"
+  },
+  "nx": {
+    "includedScripts": []
+  }
+}
