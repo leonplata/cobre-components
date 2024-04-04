@@ -34,7 +34,11 @@ export abstract class YouTubePlaylistBase extends LitElement implements IYouTube
   protected willUpdate(changedProperties: PropertyValueMap<YouTubePlaylistBase>): void {
     super.willUpdate(changedProperties);
     if (changedProperties.has('playlist')) {
-      this._observePlaylist(this.playlist);
+      if (this.playlist) {
+        this._observePlaylist(this.playlist);
+      } else {
+        this.playlist = [];
+      }
     }
     if (changedProperties.has('playlist') && changedProperties.has('currentVideo') && this.playlist && this.currentVideo) {
       this.currentVideoIndex = this._computeCurrentVideoIndex(this.playlist, this.currentVideo);
@@ -54,8 +58,8 @@ export abstract class YouTubePlaylistBase extends LitElement implements IYouTube
     this.playlist = data;
   }
 
-  private _observePlaylist(playlist: any) {
-    const video = playlist && playlist.list && playlist.list[0];
+  private _observePlaylist(playlist: IYouTubeVideo[]) {
+    const video = playlist && playlist[0];
     if (video) this.currentVideo = video;
   }
 
