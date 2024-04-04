@@ -1,4 +1,0 @@
-import { unsafeCSS } from 'lit';
-export const PAGINATION_CSS = unsafeCSS(
-  `.pagination{display:flex;padding-left:0;list-style:none}.page-link{position:relative;display:block;padding:0.5rem 0.75rem;margin-left:-1px;line-height:1.25;color:#ffc107;background-color:#fff;border:1px solid #dee2e6}.page-link:hover{z-index:2;color:#ba8b00;text-decoration:none;background-color:#e9ecef;border-color:#dee2e6}.page-link:focus{z-index:3;outline:0;box-shadow:0 0 0 0.2rem rgba(255, 193, 7, 0.25)}.page-item:first-child .page-link{margin-left:0}.page-item.active .page-link{z-index:3;color:#fff;background-color:#ffc107;border-color:#ffc107}.page-item.disabled .page-link{color:#6c757d;pointer-events:none;cursor:auto;background-color:#fff;border-color:#dee2e6}.pagination-lg .page-link{padding:0.75rem 1.5rem;font-size:1.25rem;line-height:1.5}.pagination-sm .page-link{padding:0.25rem 0.5rem;font-size:0.875rem;line-height:1.5}`
-);

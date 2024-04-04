@@ -16,7 +16,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "lit": "^3.1.2"
+    "@cobre/cobre-drawer": "workspace:^",
+    "@cobre/cobre-sticky": "workspace:^",
+    "autobind-decorator": "^2.4.0",
+    "bootstrap": "4.6.2",
+    "lit": "^3.1.2",
+    "sass": "1.64.2"
   },
   "devDependencies": {
     "typescript": "^5.2.2",
