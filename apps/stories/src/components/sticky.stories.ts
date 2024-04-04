@@ -1,24 +1,20 @@
 import { html } from 'lit'
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type { IAlbumProps } from '@cobre/cobre-album';
-import '@cobre/cobre-album';
+import '@cobre/cobre-sticky';
 
 const meta = {
   title: 'Sticky',
-  render: (args: IAlbumProps) => html`
-    <cobre-album
-      .album=${args.album}
-      .slideshow=${args.slideshow ?? false}
-      slideshow-delay=${args.slideshowDelay ?? 10000}
-    >
-    </cobre-album>
+  render: () => html`
+    <div style="padding: 2rem 1rem;">Header</div>
+    <cobre-sticky>
+      <div style="padding: 2rem 1rem;">
+        Hello, I'm a sticky element, I remain on top when scrolling
+      </div>
+    </cobre-sticky>
+    <div style="height: 200vh;"></div>
   `,
-} satisfies Meta<IAlbumProps>;
+} satisfies Meta;
 
 export default meta;
 
-export const Default: StoryObj<IAlbumProps> = {
-  args: {
-    album: []
-  },
-};
+export const Default: StoryObj = {};

@@ -16,6 +16,7 @@
     "@cobre/cobre-album": "workspace:^",
     "@cobre/cobre-collapse": "workspace:^",
     "@cobre/cobre-drawer": "workspace:^",
+    "@cobre/cobre-sticky": "workspace:^",
     "@cobre/cobre-wip": "workspace:^",
     "@cobre/cobre-youtube-playlist": "workspace:^",
     "lit": "^3.1.2"
