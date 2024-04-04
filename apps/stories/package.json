@@ -21,6 +21,7 @@
     "@cobre/cobre-lazy-image": "workspace:^",
     "@cobre/cobre-link": "workspace:^",
     "@cobre/cobre-pagination": "workspace:^",
+    "@cobre/cobre-snackbar": "workspace:^",
     "@cobre/cobre-sticky": "workspace:^",
     "@cobre/cobre-wip": "workspace:^",
     "@cobre/cobre-youtube-playlist": "workspace:^",
