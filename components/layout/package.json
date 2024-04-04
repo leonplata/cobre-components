@@ -4,6 +4,10 @@
   "description": "",
   "author": "Leon Plata",
   "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leonplata/cobre-components"
+  },
   "type": "module",
   "files": [
     "/dist"
