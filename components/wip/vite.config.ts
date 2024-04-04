@@ -31,13 +31,13 @@ export default defineConfig({
     }),
     noBundlePlugin({
       copy: '**/*.css',
-      internal: '**/*.svg'
+      internal: '**/*.svg',
     }),
   ],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      formats: ['es']
+      formats: ['es'],
     },
   },
   resolve: {
