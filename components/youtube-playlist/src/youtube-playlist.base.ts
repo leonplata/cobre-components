@@ -12,6 +12,9 @@ export abstract class YouTubePlaylistBase extends LitElement implements IYouTube
   @property({ type: Array, attribute: 'playlist' })
   playlist?: IYouTubeVideo[] = [];
 
+  @property({ type: String, attribute: 'playlist-url' })
+  playlistUrl?: string;
+
   @state()
   currentVideo?: IYouTubeVideo = undefined;
 
@@ -36,14 +39,27 @@ export abstract class YouTubePlaylistBase extends LitElement implements IYouTube
     if (changedProperties.has('playlist') && changedProperties.has('currentVideo') && this.playlist && this.currentVideo) {
       this.currentVideoIndex = this._computeCurrentVideoIndex(this.playlist, this.currentVideo);
     }
+    if (changedProperties.has('playlistUrl')) {
+      if (this.playlistUrl) {
+        this._fetchPlayList(this.playlistUrl);
+      } else {
+        this.playlist = [];
+      }
+    }
   }
 
-  _observePlaylist(playlist: any) {
+  private async _fetchPlayList(playlistUrl: string) {
+    const response = await fetch(playlistUrl);
+    const data = await response.json();
+    this.playlist = data;
+  }
+
+  private _observePlaylist(playlist: any) {
     const video = playlist && playlist.list && playlist.list[0];
     if (video) this.currentVideo = video;
   }
 
-  _handlePlaylistItemSelect(video: IYouTubeVideo) {
+  private _handlePlaylistItemSelect(video: IYouTubeVideo) {
     this.currentVideo = video;
     const iframe = this.iframeRef.value;
     if (!iframe) {
@@ -54,7 +70,7 @@ export abstract class YouTubePlaylistBase extends LitElement implements IYouTube
     });
   }
 
-  _playCurrentVideo(iframe: HTMLIFrameElement) {
+  private _playCurrentVideo(iframe: HTMLIFrameElement) {
     iframe.contentWindow?.postMessage(
       JSON.stringify({
         event: 'command',
@@ -65,11 +81,11 @@ export abstract class YouTubePlaylistBase extends LitElement implements IYouTube
     );
   }
 
-  _computeCurrentVideoIndex(playlist: IYouTubeVideo[], currentVideo: IYouTubeVideo) {
+  private _computeCurrentVideoIndex(playlist: IYouTubeVideo[], currentVideo: IYouTubeVideo) {
     return playlist && playlist.indexOf(currentVideo) + 1;
   }
 
-  _handleResize() {
+  private _handleResize() {
     this.parentRect = this.parentElement?.getBoundingClientRect();
   }
 
@@ -115,7 +131,7 @@ export abstract class YouTubePlaylistBase extends LitElement implements IYouTube
                   @click=${() => this._handlePlaylistItemSelect(video)}
                 >
                   <div class="playlist-item-thumbnail">
-                    <img .src=${'data:image/jpeg;base64,' + video.thumbnail}>
+                    <img .src=${video.thumbnail}>
                   </div>
                   <div class="playlist-item-info">
                     <div class="playlist-item-title">

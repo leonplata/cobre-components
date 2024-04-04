@@ -8,4 +8,5 @@ export interface IYouTubeVideo {
 export interface IYouTubePlayListProps {
   title?: string
   playlist?: IYouTubeVideo[]
+  playlistUrl?: string
 }

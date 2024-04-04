@@ -12,6 +12,9 @@ export abstract class AlbumBase extends LitElement implements IAlbumProps {
   @property({ type: Array, attribute: 'album' })
   album?: IAlbumItem[];
 
+  @property({ type: String, attribute: 'album-url' })
+  albumUrl?: string;
+
   @property({ type: Boolean, attribute: 'slideshow' })
   slideshow = false;
 
@@ -45,7 +48,20 @@ export abstract class AlbumBase extends LitElement implements IAlbumProps {
     if (changedProperties.has('show')) {
       this._observeShow(this.show);
     }
+    if (changedProperties.has('albumUrl')) {
+      if (this.albumUrl) {
+        this._fetchAlbum(this.albumUrl);
+      } else {
+        this.album = [];
+      }
+    }
     super.willUpdate(changedProperties);
+  }
+
+  private async _fetchAlbum(albumUrl: string) {
+    const response = await fetch(albumUrl);
+    const data = await response.json();
+    this.album = data;
   }
 
   private _setSlideshowInterval() {
