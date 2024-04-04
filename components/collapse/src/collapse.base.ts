@@ -1,9 +1,9 @@
 import { LitElement, html, type PropertyValueMap } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import type { ICollapse } from './collapse.types';
+import type { ICollapseProps } from './collapse.types';
 
-export abstract class CollapseBase extends LitElement implements ICollapse {
+export abstract class CollapseBase extends LitElement implements ICollapseProps {
 
   @property({ type: String, reflect: true, attribute: 'title' })
   title = '';

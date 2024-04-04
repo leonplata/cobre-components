@@ -2,8 +2,9 @@ import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { boundMethod } from 'autobind-decorator';
 import { calculateAverage, calculateSpeed } from './drawer.utils';
+import type { IDrawerProps } from './drawer.types';
 
-export abstract class DrawerBase extends LitElement {
+export abstract class DrawerBase extends LitElement implements IDrawerProps {
 
   @property({
     type: Boolean,

@@ -1,9 +1,9 @@
 import { LitElement, html, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import type { ILazyImageDefaultSettings } from './lazy-image.types.js'
+import type { ILazyImageProps, ILazyImageDefaultSettings } from './lazy-image.types.js'
 
-export abstract class LazyImageBase extends LitElement {
+export abstract class LazyImageBase extends LitElement implements ILazyImageProps {
 
   protected abstract readonly defaultSettings: ILazyImageDefaultSettings;
 

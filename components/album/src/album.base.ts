@@ -3,11 +3,11 @@ import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
-import type { IAlbum, IAlbumItem } from './album.types.js';
+import type { IAlbumProps, IAlbumItem } from './album.types.js';
 import ArrowRightIcon from '@fortawesome/fontawesome-free/svgs/solid/arrow-right.svg';
 import ArrowLeftIcon from '@fortawesome/fontawesome-free/svgs/solid/arrow-left.svg';
 
-export abstract class AlbumBase extends LitElement implements IAlbum {
+export abstract class AlbumBase extends LitElement implements IAlbumProps {
 
   @property({ type: Array, attribute: 'album' })
   album?: IAlbumItem[];

@@ -1,7 +1,8 @@
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators.js';
+import type { IPaginationProps } from './pagination.types'
 
-export abstract class PaginationBase extends LitElement {
+export abstract class PaginationBase extends LitElement implements IPaginationProps {
 
   @property({ type: Number })
   total = 0;

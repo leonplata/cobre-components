@@ -1,7 +1,8 @@
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators.js';
+import type { ISnackbarProps } from './snackbar.types';
 
-export abstract class SnackbarBase extends LitElement {
+export abstract class SnackbarBase extends LitElement implements ISnackbarProps {
   @property({ type: Number })
   duration = 3000;
 

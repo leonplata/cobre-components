@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { property } from 'lit/decorators.js';
+import { state } from 'lit/decorators.js';
 import { boundMethod } from 'autobind-decorator';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';
@@ -8,7 +8,7 @@ export abstract class StickyBase extends LitElement {
 
   private _ticking: boolean = false;
 
-  @property({ type: Object })
+  @state()
   protected rect: DOMRect = this.getBoundingClientRect();
 
   @boundMethod

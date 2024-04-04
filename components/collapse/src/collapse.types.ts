@@ -1,4 +1,4 @@
-export interface ICollapse {
-  title: string;
-  opened: boolean;
+export interface ICollapseProps {
+  title?: string;
+  opened?: boolean;
 }

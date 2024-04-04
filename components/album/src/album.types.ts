@@ -1,4 +1,4 @@
-export interface IAlbum {
+export interface IAlbumProps {
   album?: IAlbumItem[];
   slideshow?: boolean;
   slideshowDelay?: number;

@@ -1,10 +1,11 @@
-export interface IYouTubePlayListVideo {
+export interface IYouTubeVideo {
   id: string;
   thumbnail: string;
   title: string;
   duration: string;
 }
 
-export interface IYouTubePlayList {
-  list: IYouTubePlayListVideo[];
+export interface IYouTubePlayListProps {
+  title?: string
+  playlist?: IYouTubeVideo[]
 }

@@ -1,9 +1,9 @@
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import type { ILinkNavigationService } from './link.types';
+import type { ILinkProps, ILinkNavigationService } from './link.types';
 
-export abstract class LinkBase extends LitElement {
+export abstract class LinkBase extends LitElement implements ILinkProps {
 
   protected abstract readonly navigationService: ILinkNavigationService;
 
@@ -11,7 +11,7 @@ export abstract class LinkBase extends LitElement {
   href: string = '';
 
   @property({ type: String, attribute : 'target', reflect: true })
-  target: '_blank'|'_self'|'_parent'|'_top' = '_self';
+  target: ILinkProps['target'] = '_self';
 
   @property({ type: Boolean, attribute: 'unstyled', reflect: true })
   unstyled: boolean = false;
@@ -32,7 +32,7 @@ export abstract class LinkBase extends LitElement {
           ['no-pointer']: this.noPointer,
         })}
         .href=${this.href}
-        .target=${this.target}
+        .target=${this.target ?? '_self'}
         @click=${this._listenLinkClick}
         @touchstart=${this._listenLinkTouchStart}
       >

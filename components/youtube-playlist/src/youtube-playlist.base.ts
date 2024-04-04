@@ -2,24 +2,21 @@ import { LitElement, html, PropertyValueMap } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 import { ref, createRef } from 'lit/directives/ref.js';
-import type { IYouTubePlayList, IYouTubePlayListVideo } from './youtube-playlist.types.js';
+import type { IYouTubePlayListProps, IYouTubeVideo } from './youtube-playlist.types.js';
 
-export abstract class YouTubePlaylistBase extends LitElement {
+export abstract class YouTubePlaylistBase extends LitElement implements IYouTubePlayListProps {
 
   @property({ type: String })
   title = '';
 
+  @property({ type: Array, attribute: 'playlist' })
+  playlist?: IYouTubeVideo[] = [];
+
   @state()
-  currentVideo?: IYouTubePlayListVideo = undefined;
+  currentVideo?: IYouTubeVideo = undefined;
 
   @state()
   protected parentRect?: DOMRect = undefined;
-
-  @state()
-  playlist?: IYouTubePlayList = undefined;
-
-  @property({ type: String, reflect: true, attribute: 'playlist-url' })
-  playlistUrl = '';
 
   @state()
   currentVideoIndex = -1;
@@ -36,9 +33,6 @@ export abstract class YouTubePlaylistBase extends LitElement {
     if (changedProperties.has('playlist')) {
       this._observePlaylist(this.playlist);
     }
-    if (changedProperties.has('playlistUrl') && this.playlistUrl) {
-      this._observePlaylistUrl(this.playlistUrl);
-    }
     if (changedProperties.has('playlist') && changedProperties.has('currentVideo') && this.playlist && this.currentVideo) {
       this.currentVideoIndex = this._computeCurrentVideoIndex(this.playlist, this.currentVideo);
     }
@@ -49,13 +43,7 @@ export abstract class YouTubePlaylistBase extends LitElement {
     if (video) this.currentVideo = video;
   }
 
-  async _observePlaylistUrl(url: string) {
-    const response = await fetch(url);
-    const content = await response.json();
-    this.playlist = content;
-  }
-
-  _handlePlaylistItemSelect(video: IYouTubePlayListVideo) {
+  _handlePlaylistItemSelect(video: IYouTubeVideo) {
     this.currentVideo = video;
     const iframe = this.iframeRef.value;
     if (!iframe) {
@@ -77,8 +65,8 @@ export abstract class YouTubePlaylistBase extends LitElement {
     );
   }
 
-  _computeCurrentVideoIndex(playlist: IYouTubePlayList, currentVideo: IYouTubePlayListVideo) {
-    return playlist && playlist.list.indexOf(currentVideo) + 1;
+  _computeCurrentVideoIndex(playlist: IYouTubeVideo[], currentVideo: IYouTubeVideo) {
+    return playlist && playlist.indexOf(currentVideo) + 1;
   }
 
   _handleResize() {
@@ -114,11 +102,11 @@ export abstract class YouTubePlaylistBase extends LitElement {
         </div>
         <div id="playlist" class="playlist">
           <div class="playlist-status">
-            Reproduciendo: ${this.currentVideoIndex} / ${this.playlist?.list.length ?? 0}
+            Reproduciendo: ${this.currentVideoIndex} / ${this.playlist?.length ?? 0}
           </div>
           <div class="playlist-list-container">
             <div class="playlist-list">
-              ${this.playlist?.list.map(video => html`
+              ${this.playlist?.map(video => html`
                 <div
                   class=${classMap({
                     'playlist-item': true,
