@@ -1,3 +1,7 @@
+# cobre-components
+
+A bunch of webcomponents with opinionated styles. Work in progress.
+
 Run project graph
 ```sh
 npx nx graph
