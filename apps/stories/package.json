@@ -9,8 +9,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "nx storybook -p 6006",
+    "build-storybook": "nx build-storybook"
   },
   "dependencies": {
     "@cobre/cobre-album": "workspace:^",
@@ -29,5 +29,8 @@
     "storybook": "^8.0.5",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
+  },
+  "nx": {
+    "includedScripts": []
   }
 }

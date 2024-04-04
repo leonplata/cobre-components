@@ -12,8 +12,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "tsc && nx build",
+    "preview": "nx preview"
   },
   "dependencies": {
     "autobind-decorator": "^2.4.0",
@@ -25,5 +25,8 @@
     "vite-plugin-dts": "^3.8.1",
     "vite-plugin-no-bundle": "^4.0.0",
     "vite-plugin-svgo": "^1.4.0"
+  },
+  "nx": {
+    "includedScripts": []
   }
 }
