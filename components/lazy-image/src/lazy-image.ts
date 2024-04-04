@@ -1,6 +1,6 @@
 import { unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { lazyInject } from '@/core/index.js';
+import { lazyInject } from '@cobre/cobre-di';
 import { LazyImageBase } from './lazy-image.base.js';
 import style from './lazy-image.style.scss?inline';
 import type { ILazyImageDefaultSettings } from './lazy-image.types.js'

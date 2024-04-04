@@ -1,6 +1,6 @@
 import { unsafeCSS } from 'lit';
 import { customElement } from 'lit/decorators.js';
-import { lazyInject } from '@/core/index.js';
+import { lazyInject } from '@cobre/cobre-di';
 import { LinkBase } from './link.base.js';
 import style from './link.style.scss?inline';
 import type { ILinkNavigationService } from './link.types';
