@@ -2,11 +2,11 @@
   "name": "cobre-components",
   "version": "1.0.0",
   "description": "",
+  "author": "Leon Plata",
+  "license": "BSD-3-Clause",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": []
 }

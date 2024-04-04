@@ -1,7 +1,9 @@
 {
   "name": "stories",
-  "private": true,
   "version": "0.0.0",
+  "description": "",
+  "author": "Leon Plata",
+  "license": "BSD-3-Clause",
   "type": "module",
   "scripts": {
     "dev": "vite",
