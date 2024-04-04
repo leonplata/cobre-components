@@ -1,24 +1,48 @@
 import { html } from 'lit'
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type { IAlbumProps } from '@cobre/cobre-album';
-import '@cobre/cobre-album';
+import type { IDrawerProps } from '@cobre/cobre-drawer';
+import '@cobre/cobre-drawer';
+
+
 
 const meta = {
   title: 'Drawer',
-  render: (args: IAlbumProps) => html`
-    <cobre-album
-      .album=${args.album}
-      .slideshow=${args.slideshow ?? false}
-      slideshow-delay=${args.slideshowDelay ?? 10000}
-    >
-    </cobre-album>
-  `,
-} satisfies Meta<IAlbumProps>;
+  render: (args: IDrawerProps) => {
+
+    function toggle(state: boolean) {
+      const element = document.querySelector('cobre-drawer')
+      if (!element) return
+      element.opened = state
+    }
+
+    return html`
+      <button @click=${() => toggle(true)}>
+        Open
+      </button>
+      <cobre-drawer
+        .fromLeft=${args.fromLeft ?? false}
+        .opened=${args.opened ?? false}
+      >
+        <button @click=${() => toggle(false)}>
+          Close
+        </button>
+      </cobre-drawer>
+    `
+  },
+} satisfies Meta<IDrawerProps>;
 
 export default meta;
 
-export const Default: StoryObj<IAlbumProps> = {
+export const Right: StoryObj<IDrawerProps> = {
   args: {
-    album: []
+    fromLeft: false,
+    opened: true,
+  },
+};
+
+export const Left: StoryObj<IDrawerProps> = {
+  args: {
+    fromLeft: true,
+    opened: true,
   },
 };

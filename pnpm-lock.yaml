@@ -41,6 +41,9 @@ importers:
       '@cobre/cobre-collapse':
         specifier: workspace:^
         version: link:../../components/collapse
+      '@cobre/cobre-drawer':
+        specifier: workspace:^
+        version: link:../../components/drawer
       '@cobre/cobre-wip':
         specifier: workspace:^
         version: link:../../components/wip
