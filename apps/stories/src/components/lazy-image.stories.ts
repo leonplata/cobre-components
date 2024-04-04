@@ -2,8 +2,6 @@ import { html } from 'lit'
 import type { Meta, StoryObj } from '@storybook/web-components';
 import type { ILazyImageProps } from '@cobre/cobre-lazy-image';
 import '@cobre/cobre-lazy-image';
-import demo01Jpeg from '../assets/demo-01.jpeg'
-import demo01ThumbJpeg from '../assets/demo-01-thumb.jpg'
 
 const meta = {
   title: 'Lazy Image',
@@ -24,8 +22,8 @@ export default meta;
 
 export const Default: StoryObj<ILazyImageProps> = {
   args: {
-    src: demo01Jpeg,
-    placeholderSrc: demo01ThumbJpeg,
+    src: 'images/demo-01.jpeg',
+    placeholderSrc: 'images/demo-01-thumb.jpeg',
     alt: 'Two best friends',
     fluid: true,
   },
