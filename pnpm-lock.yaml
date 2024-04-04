@@ -56,6 +56,9 @@ importers:
       '@cobre/cobre-link':
         specifier: workspace:^
         version: link:../../components/link
+      '@cobre/cobre-pagination':
+        specifier: workspace:^
+        version: link:../../components/pagination
       '@cobre/cobre-sticky':
         specifier: workspace:^
         version: link:../../components/sticky

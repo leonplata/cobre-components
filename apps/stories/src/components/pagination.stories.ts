@@ -1,24 +1,31 @@
 import { html } from 'lit'
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type { IAlbumProps } from '@cobre/cobre-album';
-import '@cobre/cobre-album';
+import type { IPaginationProps } from '@cobre/cobre-pagination';
+import '@cobre/cobre-pagination';
 
 const meta = {
   title: 'Pagination',
-  render: (args: IAlbumProps) => html`
-    <cobre-album
-      .album=${args.album}
-      .slideshow=${args.slideshow ?? false}
-      slideshow-delay=${args.slideshowDelay ?? 10000}
+  render: (args: IPaginationProps) => html`
+    <cobre-pagination
+      .autoScroll=${args.autoScroll ?? false}
+      .currentPage=${args.currentPage ?? 1}
+      .total=${args.total ?? 1}
+      .perPage=${args.perPage ?? 10}
+      .max=${args.max ?? 5}
     >
-    </cobre-album>
+      <div slot="prev">PREV</div>
+      <div slot="next">NEXT</div>
+    </cobre-pagination>
   `,
-} satisfies Meta<IAlbumProps>;
+} satisfies Meta<IPaginationProps>;
 
 export default meta;
 
-export const Default: StoryObj<IAlbumProps> = {
+export const Default: StoryObj<IPaginationProps> = {
   args: {
-    album: []
+    total: 100,
+    perPage: 10,
+    max: 5,
+    currentPage: 1,
   },
 };
