@@ -1,0 +1,29 @@
+{
+  "name": "@cobre/cobre-collapse",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "/dist"
+  ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@polymer/iron-collapse": "^3.0.1",
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "lit": "^3.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.1",
+    "vite-plugin-no-bundle": "^4.0.0",
+    "vite-plugin-svgo": "^1.4.0"
+  }
+}

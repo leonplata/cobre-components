@@ -1,39 +1,12 @@
 {
   "name": "cobre-components",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.5.2",
-    "@polymer/iron-collapse": "^3.0.1",
-    "@polymer/iron-icon": "^3.0.1",
-    "@polymer/iron-icons": "^3.0.1",
-    "autobind-decorator": "^2.4.0",
-    "inversify": "^6.0.2",
-    "inversify-inject-decorators": "^3.1.0",
-    "lit": "^3.1.2",
-    "reflect-metadata": "^0.2.2"
-  },
-  "devDependencies": {
-    "@chromatic-com/storybook": "1.2.25",
-    "@storybook/addon-essentials": "^8.0.5",
-    "@storybook/addon-links": "^8.0.5",
-    "@storybook/blocks": "^8.0.5",
-    "@storybook/test": "^8.0.5",
-    "@storybook/web-components": "^8.0.5",
-    "@storybook/web-components-vite": "^8.0.5",
-    "sass": "^1.72.0",
-    "storybook": "^8.0.5",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.8.1",
-    "vite-plugin-svgo": "^1.4.0"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
