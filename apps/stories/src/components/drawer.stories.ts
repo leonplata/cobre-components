@@ -3,8 +3,6 @@ import type { Meta, StoryObj } from '@storybook/web-components';
 import type { IDrawerProps } from '@cobre/cobre-drawer';
 import '@cobre/cobre-drawer';
 
-
-
 const meta = {
   title: 'Drawer',
   render: (args: IDrawerProps) => {

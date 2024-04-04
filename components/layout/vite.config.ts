@@ -39,6 +39,12 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       formats: ['es']
     },
+    rollupOptions: {
+      external: [
+        '@cobre/cobre-drawer',
+        '@cobre/cobre-sticky',
+      ],
+    },
   },
   resolve: {
     alias: {

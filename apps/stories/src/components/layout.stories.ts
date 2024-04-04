@@ -1,24 +1,29 @@
 import { html } from 'lit'
 import type { Meta, StoryObj } from '@storybook/web-components';
-import type { IAlbumProps } from '@cobre/cobre-album';
-import '@cobre/cobre-album';
+import '@cobre/cobre-layout';
 
 const meta = {
   title: 'Layout',
-  render: (args: IAlbumProps) => html`
-    <cobre-album
-      .album=${args.album}
-      .slideshow=${args.slideshow ?? false}
-      slideshow-delay=${args.slideshowDelay ?? 10000}
-    >
-    </cobre-album>
+  render: () => html`
+    <cobre-layout>
+      <header slot="header">
+        Header
+      </header>
+      <section slot="navigation">
+        Navigation
+      </section>
+      <section slot="drawer">
+      </section>
+      <main slot="main" style="height: 200vh;">
+        Main content
+      </main>
+      <footer slot="footer">
+        Footer
+      </footer>
+    </cobre-layout>
   `,
-} satisfies Meta<IAlbumProps>;
+} satisfies Meta;
 
 export default meta;
 
-export const Default: StoryObj<IAlbumProps> = {
-  args: {
-    album: []
-  },
-};
+export const Default: StoryObj = {};

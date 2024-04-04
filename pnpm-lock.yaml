@@ -44,6 +44,9 @@ importers:
       '@cobre/cobre-drawer':
         specifier: workspace:^
         version: link:../../components/drawer
+      '@cobre/cobre-layout':
+        specifier: workspace:^
+        version: link:../../components/layout
       '@cobre/cobre-sticky':
         specifier: workspace:^
         version: link:../../components/sticky
