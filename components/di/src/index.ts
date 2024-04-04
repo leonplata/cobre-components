@@ -2,6 +2,8 @@ import 'reflect-metadata';
 import { Container } from 'inversify';
 import getDecorators from 'inversify-inject-decorators';
 
+export { injectable } from 'inversify';
+
 export const container = new Container();
 export const {
   lazyInject,

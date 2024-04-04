@@ -47,7 +47,7 @@ export abstract class LinkBase extends LitElement implements ILinkProps {
       return;
     }
     this._touchCount = 0;
-    if (this.target === '_self') {
+    if (!this.target || this.target === '_self') {
       event.preventDefault();
       this.navigationService.navigate(this.href);
     }

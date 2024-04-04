@@ -15,9 +15,11 @@
   "dependencies": {
     "@cobre/cobre-album": "workspace:^",
     "@cobre/cobre-collapse": "workspace:^",
+    "@cobre/cobre-di": "workspace:^",
     "@cobre/cobre-drawer": "workspace:^",
     "@cobre/cobre-layout": "workspace:^",
     "@cobre/cobre-lazy-image": "workspace:^",
+    "@cobre/cobre-link": "workspace:^",
     "@cobre/cobre-sticky": "workspace:^",
     "@cobre/cobre-wip": "workspace:^",
     "@cobre/cobre-youtube-playlist": "workspace:^",
