@@ -22,8 +22,8 @@ export default meta;
 
 export const Default: StoryObj<ILazyImageProps> = {
   args: {
-    src: 'images/demo-01.jpeg',
-    placeholderSrc: 'images/demo-01-thumb.jpeg',
+    src: 'images/demo-01.jpg',
+    placeholderSrc: 'images/demo-01-thumb.jpg',
     alt: 'Two best friends',
     fluid: true,
   },

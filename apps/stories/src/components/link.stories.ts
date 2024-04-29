@@ -1,17 +1,7 @@
 import { html } from 'lit'
 import type { Meta, StoryObj } from '@storybook/web-components';
-import { type ILinkProps, type ILinkNavigationService, LinkNavigationServiceProviderKey } from '@cobre/cobre-link';
-import { container, injectable } from '@cobre/cobre-di'
+import type { ILinkProps } from '@cobre/cobre-link';
 import '@cobre/cobre-link'
-
-@injectable()
-class LinkNavigationService implements ILinkNavigationService {
-  navigate(route: string): void {
-    alert(route)
-  }
-}
-
-container.bind(LinkNavigationServiceProviderKey).to(LinkNavigationService)
 
 const meta = {
   title: 'Link',
