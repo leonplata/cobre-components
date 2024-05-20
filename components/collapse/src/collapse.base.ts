@@ -5,10 +5,10 @@ import type { ICollapseProps } from './collapse.types';
 
 export abstract class CollapseBase extends LitElement implements ICollapseProps {
 
-  @property({ type: String, reflect: true, attribute: 'title' })
+  @property({ type: String, reflect: true, attribute: 'cobre-title' })
   title = '';
 
-  @property({ type: Boolean, reflect: true, attribute: 'opened' })
+  @property({ type: Boolean, reflect: true, attribute: 'cobre-opened' })
   opened = false;
 
   protected willUpdate(changedProperties: PropertyValueMap<CollapseBase> | Map<PropertyKey, unknown>): void {
