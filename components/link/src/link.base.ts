@@ -1,11 +1,9 @@
 import { LitElement, html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import type { ILinkProps, ILinkNavigationService } from './link.types';
+import type { ILinkProps } from './link.types';
 
 export abstract class LinkBase extends LitElement implements ILinkProps {
-
-  protected abstract readonly navigationService: ILinkNavigationService;
 
   @property({ type: String, attribute: 'href', reflect: true })
   href: string = '';
@@ -49,7 +47,14 @@ export abstract class LinkBase extends LitElement implements ILinkProps {
     this._touchCount = 0;
     if (!this.target || this.target === '_self') {
       event.preventDefault();
-      this.navigationService.navigate(this.href);
+      const customEvent = new CustomEvent('link-pressed', {
+        bubbles: true,
+        composed: true,
+        detail: {
+          href: this.href,
+        }
+      });
+      this.dispatchEvent(customEvent);
     }
   }
 

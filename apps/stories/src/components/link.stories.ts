@@ -6,12 +6,14 @@ import '@cobre/cobre-link'
 const meta = {
   title: 'Link',
   render: (args: ILinkProps) => html`
-    <cobre-link
-      .href=${args.href ?? ''}
-      .target=${args.target}
-    >
-      Press here
-    </cobre-link>
+    <div @link-pressed=${() => alert('Link pressed')}>
+      <cobre-link
+        .href=${args.href ?? ''}
+        .target=${args.target}
+      >
+        Press here
+      </cobre-link>
+    </div>
   `,
 } satisfies Meta<ILinkProps>;
 
