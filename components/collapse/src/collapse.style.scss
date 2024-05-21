@@ -1,4 +1,5 @@
 :host {
+  --collapse-header-font-family: sans-serif;
   display: block;
   margin: 20px 0;
 }
@@ -7,6 +8,7 @@ iron-icon {
   transition: all 0.2s ease-out;
 }
 .collapse-bar {
+  font-family: var(--collapse-header-font-family);
   cursor: pointer;
   background: #f8f8f8;
   height: 64px;

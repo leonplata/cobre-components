@@ -1,4 +1,4 @@
 export interface ICollapseProps {
-  title?: string;
+  header?: string;
   opened?: boolean;
 }

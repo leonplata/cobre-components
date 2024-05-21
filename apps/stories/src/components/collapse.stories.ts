@@ -8,7 +8,7 @@ const meta = {
   render: (args: ICollapseProps) => html`
     <cobre-collapse
       .opened=${args.opened ?? false}
-      .title=${args.title ?? ''}
+      .header=${args.header ?? ''}
     >
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim
@@ -28,7 +28,7 @@ export default meta;
 export const Closed: StoryObj<ICollapseProps> = {
   args: {
     opened: false,
-    title: 'Closed',
+    header: 'Closed',
   },
 };
 
@@ -36,6 +36,6 @@ export const Closed: StoryObj<ICollapseProps> = {
 export const Opened: StoryObj<ICollapseProps> = {
   args: {
     opened: true,
-    title: 'Opened',
+    header: 'Opened',
   },
 };

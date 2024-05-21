@@ -5,10 +5,10 @@ import type { ICollapseProps } from './collapse.types';
 
 export abstract class CollapseBase extends LitElement implements ICollapseProps {
 
-  @property({ type: String, reflect: true, attribute: 'cobre-title' })
-  title = '';
+  @property({ type: String, reflect: true, attribute: 'header' })
+  header = '';
 
-  @property({ type: Boolean, reflect: true, attribute: 'cobre-opened' })
+  @property({ type: Boolean, reflect: true, attribute: 'opened' })
   opened = false;
 
   protected willUpdate(changedProperties: PropertyValueMap<CollapseBase> | Map<PropertyKey, unknown>): void {
@@ -36,7 +36,7 @@ export abstract class CollapseBase extends LitElement implements ICollapseProps 
           icon="hardware:keyboard-arrow-down"
         ></iron-icon>
         <div class="collapse-title">
-          <i>${this.title}</i>
+          <span>${this.header}</span>
         </div>
       </div>
       <iron-collapse .opened=${this.opened}>
