@@ -6,6 +6,7 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   max-width: 100%;
 }
 .full {
@@ -109,7 +110,7 @@
 .normal {
   position: relative;
   display: flex;
-  width: 100vw;
+  width: 100%;
 }
 .fixed {
   position: fixed;
