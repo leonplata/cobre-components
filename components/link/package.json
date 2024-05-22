@@ -1,6 +1,6 @@
 {
   "name": "@cobre/cobre-link",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "",
   "author": "Leon Plata",
   "license": "BSD-3-Clause",
@@ -20,7 +20,6 @@
     "preview": "nx preview"
   },
   "dependencies": {
-    "@cobre/cobre-di": "workspace:^",
     "lit": "^3.1.2"
   },
   "devDependencies": {
